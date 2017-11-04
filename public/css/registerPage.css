@@ -3,3 +3,9 @@ body {
     padding : 0;
      
 }
+
+#resgisterBox{
+    background-color: rgb(201, 247, 255);
+    padding: 10px;
+    text-align: center;
+}
