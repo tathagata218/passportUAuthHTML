@@ -9,3 +9,11 @@ body {
     padding: 10px;
     text-align: center;
 }
+
+#userNameInt {
+    padding-bottom: 5px;
+}
+
+#passInt {
+    padding-bottom: 5px;
+}

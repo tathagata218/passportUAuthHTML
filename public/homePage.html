@@ -25,17 +25,25 @@
             <div id="homePage" class="col-md-3 col-md-offset-4">        
     <h1>Returning User</h1>
             <form action="/login" method="post">
-                <div>
+                <div calss= "row">
+                    <div class="col-sm-12">
+                <div id="userNameInt">
                     <label>Username:</label>
                     <input type="text" name="username"/>
                 </div>
-                <div>
+          
+                <div id="passInt">
                     <label>Password:</label>
                     <input type="password" name="password"/>
                 </div>
+            </div>
+        </div>
+        
                 <div>
                     <input class ="btn btn-sm btn-primary" type="submit" value="Log In"/>
                 </div>
+           
+       
          </form>
       
            <a class ="btn btn-sm btn-primary"   type="button"  href="/newLogin">Register as New User</a>
