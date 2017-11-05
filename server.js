@@ -36,8 +36,18 @@ passport.use(new LocalStrategy(
     function(username, password, cb){
     // var hashedPass = bCrypt.hashSync(pass)
   db.user_Stuff.findAll({ where : {username : username}}).then(function(data){
-    console.log(data);
+ 
+    var hashPass = data[0].dataValues.password;
+    if(data[0].dataValues.userName === username && bCrypt.compareSync(password, hashPass) ){
+      return cb(null, true);
+    }
+    else{
+      return cb (null, false , {message: 'Incorrect username.'});
+    }
+  
   });
+
+
    
   
   }
