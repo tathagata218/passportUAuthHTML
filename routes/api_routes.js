@@ -4,11 +4,9 @@ var passport   = require('passport');
 
 module.exports = function(app){
 
-    app.post("/login", passport.authenticate('local',{
-      successRedirect: '/main',
-      failureRedirect: '/',
-      failureFlash: true 
-          })
+    app.post("/login", passport.authenticate('local'), (req,res) =>{
+              res.send(req.user);
+          }
     );
     
     app.post("/newlogin", function(req,res){
