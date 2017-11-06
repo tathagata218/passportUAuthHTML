@@ -42,11 +42,11 @@ passport.use(new LocalStrategy(
     if(data.length !== 0 ){
       hashPass = data[0].dataValues.password;
     if(data[0].dataValues.userName === username && bCrypt.compareSync(password, hashPass) ){
-      return cb(null, true);
+      return cb(null, {"message": "login was successful!!!"});
     }
   }
     else if (data.length === 0 || bCrypt.compareSync(password, hash))  {
-      return cb(null ,false,{"Message" : "Your Password or Username is Incorrect"});
+      return cb(null , {"Message" : "Your Password or Username is Incorrect"});
     }
   
   });

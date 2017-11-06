@@ -5,9 +5,18 @@ var passport   = require('passport');
 module.exports = function(app){
 
     app.post("/login", passport.authenticate('local'), (req,res) =>{
-              res.send(req.user);
+      
+        if(req.user.message === "login was successful!!!"){
+            res.redirect("/main");
+        }
+        else {
+           
+             res.redirect("/");
+        }
           }
     );
+
+ 
     
     app.post("/newlogin", function(req,res){
         
