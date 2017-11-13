@@ -2,6 +2,8 @@ var db = require("../models");
 var bCrypt = require('bcrypt-nodejs');
 var passport   = require('passport');
 
+//this is a test for desktop
+
 module.exports = function(app){
 
     app.post("/login", passport.authenticate('local'), (req,res) =>{
